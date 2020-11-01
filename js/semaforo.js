@@ -99,7 +99,7 @@ async function evaluarCadena(cadena) {
     if (estadoActual === 'V') {
         Swal.fire('Cadena Valida', 'La cadena <b>['+ cadena +']</b> es valida.', 'success');
     }
-    else {111
+    else {
         Swal.fire('Cadena Invalida', 'La cadena no termina en el estado final declarado <b>[verde]</b>.', 'error');
     }
     $('#btn-parar-evaluacion').trigger('click');
