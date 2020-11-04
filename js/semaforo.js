@@ -62,9 +62,13 @@ function evaluarSimbolo(simbolo) {
     return lenguaje.includes(simbolo);
 }
 
+function alertCadenaInvalida(simbolo) {
+    Swal.fire('Cadena Invalida', 'El simbolo <b>"' + simbolo + '"</b> no es parte del lenguaje del automata.', 'error');
+}
+
 async function evaluarCadena(cadena) {
     var simbolos = cadena.split('');
-
+    
     for (var i = 0; i < simbolos.length; i++) {
         if (!stopEvaluation) {
             var simboloActual = simbolos[i];
@@ -103,8 +107,4 @@ async function evaluarCadena(cadena) {
         Swal.fire('Cadena Invalida', 'La cadena no termina en el estado final declarado <b>[verde]</b>.', 'error');
     }
     $('#btn-parar-evaluacion').trigger('click');
-}
-
-function alertCadenaInvalida(simbolo) {
-    Swal.fire('Cadena Invalida', 'El simbolo <b>"' + simbolo + '"</b> no es parte del lenguaje del automata.', 'error');
 }
